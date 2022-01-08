@@ -1,14 +1,11 @@
 package org.aibles.userservice.service.iml;
 
-import liquibase.pro.packaged.A;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.aibles.userservice.model.User;
 import org.aibles.userservice.repository.UserRepository;
 //import org.aibles.userservice.security.UserDetailsImpl;
 //import org.aibles.userservice.security.jwt.JwtProvider;
 import org.aibles.userservice.security.JwtProvider;
-import org.aibles.userservice.security.UserPrinciple;
+import org.aibles.userservice.security.UserPrincipal;
 import org.aibles.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -63,7 +60,7 @@ public class UserServiceImpl implements UserService {
         if (existingUser == null){
             throw new UsernameNotFoundException(email);
         }
-        return UserPrinciple.create(existingUser);
+        return UserPrincipal.create(existingUser);
     }
 
     @Override

@@ -14,19 +14,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import javax.annotation.PostConstruct;
 import java.util.*;
 
-//@RequiredArgsConstructor
 @SpringBootApplication
 public class UserServiceApplication {
 
-//    @Autowired
-//    private UserRepository userRepository;
-//
-//    @Autowired
-//    private RoleRepository roleRepository;
-
     @Autowired
     private   UserService userService;
-//
+
     @Autowired
     private  RoleService roleService;
 

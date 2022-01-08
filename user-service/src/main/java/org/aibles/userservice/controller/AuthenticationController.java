@@ -1,12 +1,10 @@
 package org.aibles.userservice.controller;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.aibles.userservice.dto.authentication.AuthenticationRequestDTO;
-import org.aibles.userservice.exception.ApiRequestException;
-import org.aibles.userservice.security.JwtProvider;
+import org.aibles.userservice.exception.LoginException;
+import org.aibles.userservice.exception.UserNotFoundException;
 import org.aibles.userservice.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,6 +17,7 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 //@AllArgsConstructor
+
 public class AuthenticationController {
 
     private final AuthenticationManager authenticationManager;
@@ -31,7 +30,7 @@ public class AuthenticationController {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(requestDTO.getEmail(), requestDTO.getPassword()));
             return ResponseEntity.ok(userService.login(requestDTO.getEmail()));
         }catch (AuthenticationException e){
-            throw new ApiRequestException("Incorrect password or email", HttpStatus.FORBIDDEN);
+            throw new LoginException();
         }
     }
 
