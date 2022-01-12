@@ -28,30 +28,10 @@ public class UserServiceImpl implements UserService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public List<User> getUsers() {
-        return userRepository.findAll();
-    }
-
-    @Override
-    public Optional<User> findById(Long id) {
-        return userRepository.findById(id);
-    }
-
-    @Override
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
-    }
-
-    @Override
     public User save(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         User newUser = userRepository.save(user);
         return newUser;
-    }
-
-    @Override
-    public void remove(Long id) {
-        userRepository.deleteById(id);
     }
 
     @Override
@@ -75,6 +55,8 @@ public class UserServiceImpl implements UserService {
         response.put("userRole", userRole);
         return response;
     }
+
+
 
     //    @Override
 //    public UserResponseDTO findUserById(int userId) {

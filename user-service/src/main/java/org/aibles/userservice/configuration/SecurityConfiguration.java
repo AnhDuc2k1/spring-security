@@ -30,7 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .cors().and().csrf().disable().authorizeRequests()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/","/login").permitAll()
+                .antMatchers("/api/v1/users/*","/login").permitAll()
                 .anyRequest().authenticated()
                 .and().addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }

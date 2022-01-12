@@ -25,10 +25,7 @@ public interface UserService extends UserDetailsService {
 //    Role saveRole(Role role);
 //    void addRoleToUser(String email, String roleName);
 //    User getUser(String email);
-    List<User> getUsers();
-    Optional<User> findById(Long id);
+
     User save (User user);
-    void remove(Long id);
-    User findByEmail(String email);
     Map<String, Object> login(String email);
 }

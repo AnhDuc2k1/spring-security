@@ -5,6 +5,7 @@ import org.aibles.userservice.dto.user.UserResponseDTO;
 import org.aibles.userservice.dto.user.UserRequestDTO;
 import org.aibles.userservice.model.User;
 import org.aibles.userservice.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -18,7 +19,9 @@ import java.util.*;
 @RequestMapping("/api/v1/users")
 public class UserController {
 
-//    private UserService userService;
+
+    @Autowired
+    private UserService userService;
 //
 //    @GetMapping
 //    public ResponseEntity<List<User>> getUsers(){
@@ -39,12 +42,23 @@ public class UserController {
 //        return new ResponseEntity<>(listOfUsersResponseDTO, HttpStatus.OK);
 //    }
 //
-//    @PostMapping
-//    public ResponseEntity<UserResponseDTO> createUser(@Valid @RequestBody UserRequestDTO userRequestDTO){
-//        UserResponseDTO userResponseDTO = userService.createUser(userRequestDTO);
-//        return new ResponseEntity<>(userResponseDTO, HttpStatus.OK);
+//        @PostMapping
+//        public ResponseEntity<UserResponseDTO> createUser(@Valid @RequestBody UserRequestDTO userRequestDTO){
+//            UserResponseDTO userResponseDTO = userService.createUser(userRequestDTO);
+//            return new ResponseEntity<>(userResponseDTO, HttpStatus.OK);
+//        }
+//    @PostMapping("/save")
+//    public ResponseEntity<User> createUser(@RequestBody User user){
+////        UserResponseDTO userResponseDTO = userService.createUser(userRequestDTO);
+//        User newUser = userService.save(user);
+//        return new ResponseEntity<>(newUser, HttpStatus.OK);
 //    }
-
+//
+//        @GetMapping("/{id}")
+//    public ResponseEntity<User> getUser(@PathVariable("id") Long id){
+//        User user = userService.findById(id);
+//        return new ResponseEntity<User>(user, HttpStatus.OK);
+//    }
 //    @PutMapping("/{id}")
 //    public ResponseEntity<UserResponseDTO> updateUser(@PathVariable ("id") int id,@Valid @RequestBody UserRequestDTO userRequestDTO) {
 //        UserResponseDTO userResponseDTO = userService.updateUser(id,userRequestDTO);
