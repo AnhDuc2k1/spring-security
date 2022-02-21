@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="945a16a2-41f4-47e2-897b-e03ee2cbd6d8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/UserServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/configuration/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/exception/ApiRequestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/exception/ExceptionsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/exception/ExceptionsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/security/JwtProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/security/JwtProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/security/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/security/UserPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/service/iml/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/aibles/userservice/service/iml/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +43,7 @@
       <updated>1641883359767</updated>
       <workItem from="1641883360961" duration="40000" />
       <workItem from="1641957097265" duration="274000" />
+      <workItem from="1645439896560" duration="20000" />
     </task>
     <servers />
   </component>

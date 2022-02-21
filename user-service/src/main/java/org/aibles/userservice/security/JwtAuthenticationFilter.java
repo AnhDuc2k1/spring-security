@@ -2,7 +2,7 @@ package org.aibles.userservice.security;
 
 import lombok.RequiredArgsConstructor;
 import org.aibles.userservice.exception.JwtAuthenticationException;
-import org.aibles.userservice.service.UserService;
+//import org.aibles.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -34,15 +34,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     SecurityContextHolder.getContext().setAuthentication(authentication);
                 }
             }
-            else {
-                System.out.println("bbbbbb");
-                servletResponse.sendError(HttpStatus.UNAUTHORIZED.value());
-            }
         } catch (JwtAuthenticationException e) {
-            System.out.println("aaaaaa");
-            SecurityContextHolder.clearContext();
-            servletResponse.sendError(HttpStatus.UNAUTHORIZED.value());
-//            throw new JwtAuthenticationException("Jwt token is expired or invalid", HttpStatus.UNAUTHORIZED);
+//            System.out.println("aaaaaa");
+//            SecurityContextHolder.clearContext();
+//            servletResponse.sendError(HttpStatus.UNAUTHORIZED.value());
+////            throw new JwtAuthenticationException("Jwt token is expired or invalid", HttpStatus.UNAUTHORIZED);
         }
         filterChain.doFilter(servletRequest, servletResponse);
     }

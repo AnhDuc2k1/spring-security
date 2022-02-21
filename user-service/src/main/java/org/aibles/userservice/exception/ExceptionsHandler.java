@@ -20,16 +20,11 @@ public class ExceptionsHandler {
 
     @ExceptionHandler (MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String,String>> handleValidation (MethodArgumentNotValidException e){
-        Map<String,String> m = new HashMap<>();
+        Map<String,String> errorsValidation = new HashMap<>();
         for (ObjectError er : e.getBindingResult().getAllErrors()){
-            m.put(((FieldError)er).getField(),er.getDefaultMessage());
+            errorsValidation.put(((FieldError)er).getField(),er.getDefaultMessage());
         }
-//        e.getBindingResult().getAllErrors().forEach((error) -> {
-//            String fieldName = ((FieldError) error).getField();
-//            String errorMessage = error.getDefaultMessage();
-//            m.put(fieldName, errorMessage);
-//        });
-        return new ResponseEntity<> (m, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<> (errorsValidation, HttpStatus.BAD_REQUEST);
     }
 }
 

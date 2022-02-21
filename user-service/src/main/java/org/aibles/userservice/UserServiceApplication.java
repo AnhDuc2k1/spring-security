@@ -30,25 +30,37 @@ public class UserServiceApplication {
     @PostConstruct
     public String initUser(){
         Role roleAdmin = new Role();
-            roleAdmin.setId(1L);
-            roleAdmin.setName("ROLE_ADMIN");
-            roleService.save(roleAdmin);
-            Role roleUser = new Role();
-            roleUser.setId(2L);
-            roleUser.setName("ROLE_USER");
-            roleService.save(roleUser);
+        roleAdmin.setId(1L);
+        roleAdmin.setName("ROLE_ADMIN");
+        roleService.save(roleAdmin);
+        Role roleUser = new Role();
+        roleUser.setId(2L);
+        roleUser.setName("ROLE_USER");
+        roleService.save(roleUser);
 
-            User admin = new User();
-            Set<Role> roles = new HashSet<>();
-            roles.add(roleAdmin);
-            admin.setId(1L);
-            admin.setName("admin");
-            admin.setEmail("admin@gmail.com");
-            admin.setPassword("123456");
-            admin.setActived(true);
-            admin.setRoles(roles);
-            userService.save(admin);
-            return "saved";
+        User admin = new User();
+        Set<Role> roles = new HashSet<>();
+        roles.add(roleAdmin);
+        admin.setId(1L);
+        admin.setName("admin");
+        admin.setEmail("admin@gmail.com");
+        admin.setPassword("123456");
+        admin.setActived(true);
+        admin.setRoles(roles);
+        userService.save(admin);
+
+        User admin1 = new User();
+        Set<Role> role1s = new HashSet<>();
+        role1s.add(roleAdmin);
+        admin.setId(2L);
+        admin.setName("anhduc");
+        admin.setEmail("anhduc2k1vn@gmail.com");
+        admin.setPassword("Anhduc2001");
+        admin.setActived(true);
+        admin.setRoles(roles);
+        userService.save(admin);
+
+        return "saved";
     }
 
 //    @PostConstruct
